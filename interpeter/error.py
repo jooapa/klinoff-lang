@@ -48,3 +48,7 @@ def operator_not_found(operator):
     print("Error: Operator \"" + operator + "\" not found")
     line_error()
     exit()
+    
+def last_line_not_empty():
+    print("EcmaScript Error: Last line must be empty")
+    exit()

@@ -24,6 +24,7 @@ full_line = "" # current line in text
 nöff_count = 0 # make sure there is only one nöff
 coming_from_if = False
 last_came = []
+Debug_mode = False
 
 def find_words_line(text, word):
     lines = text.split("\n")
@@ -55,7 +56,11 @@ def setup_functions(lines):
                 functions[last_function_name][1] = line_number
                 last_function_name = None
                 
-    
+def debugger():
+    if Debug_mode:
+        input()
+        print(str(line_number) + "| " + full_line, end="")
+        
 def detect_keywords():
     global nöff_count, full_line
     # detect keywords
@@ -126,6 +131,10 @@ def start(content):
     # read every line
     lines = content.split("\n")
     
+    # last line should be empty
+    if lines[-1] != "":
+        error.last_line_not_empty()
+    
     setup_functions(lines)
     i = 1
     while i <= len(lines):
@@ -138,8 +147,7 @@ def start(content):
         full_line = lines[i-1]
         line_number = i
         
-        input()
-        print(str(line_number) + "| " + full_line, end="")
+        debugger()
         
         # if line is empty, then skip it
         if full_line == "":

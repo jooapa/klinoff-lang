@@ -17,6 +17,11 @@ not this:
 oink"Hello World!"
 ```
 
+## EVEN MORE IMPORTANT!!
+klinoff-lang is case sensitive, so you must write the code exactly like in this documentation.
+
+and also Happy to tell youu guys, that klinoff-lang is parthnered with EcmaScript, so you HAVE TO leave a empty line at the end of the file.
+
 ## file extension
 The file extension for klinoff language is
 - `.klinoff`
@@ -190,7 +195,7 @@ power $num1 0.333
 oink "$num1"
 
 gip
-    
+
 ```
 ## Simple if statement Example
 ```bash
@@ -214,4 +219,5 @@ gip
 pig possu3
 oink "num1 is equal to num2"
 gip
+
 ```

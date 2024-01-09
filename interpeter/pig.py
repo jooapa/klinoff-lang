@@ -12,7 +12,6 @@ def gip():
        
     lines = start.full_code.split("\n")
 
-    print(start.last_came)
     start.goto_number = start.last_came[-1]
     # print(if_statement.if_statement_was_True)
     if if_statement.start.coming_from_if and if_statement.if_statement_was_True:
