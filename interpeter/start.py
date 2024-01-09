@@ -8,17 +8,23 @@ import os, sys, error, oink, variable
 # nilf    else if statement
 # nör     for loop
 
-keywords = ["nöff", "nöf", "oink", "niff", "niffel", "nilf", "nör"]
+keywords = ["nöff", "nöf", "oink", "niff", "niffel", "nilf", "nör", "modify",
+            "add", "sub", "multiply", "divide", "modulo", "power"]
 variables = {}
 program_name = ""
+line_number = 0
+nöff_count = 0 # make sure there is only one nöff
 
 def detect_keywords(line):
-    
+    global nöff_count
     # detect keywords
     first_word = line.split(" ")[0]
     if first_word in keywords:
         if first_word == "nöff":
-           pass
+            if nöff_count == 1:
+                error.too_much_nöff()
+            else:
+                nöff_count += 1
         elif first_word == "nöf":
             variable.create(line)
         elif first_word == "oink":
@@ -31,11 +37,25 @@ def detect_keywords(line):
             pass
         elif first_word == "nör":
             pass
-       
+        elif first_word == "modify":
+            variable.modify(line)
+        elif first_word == "add":
+            variable.do_operator(line, "add")
+        elif first_word == "sub":
+            variable.do_operator(line, "subtract")
+        elif first_word == "multiply":
+            variable.do_operator(line, "multiply")
+        elif first_word == "divide":
+            variable.do_operator(line, "divide")
+        elif first_word == "modulo":
+            variable.do_operator(line, "modulo")
+        elif first_word == "power":
+            variable.do_operator(line, "power")    
     else:
-        error.keyword_not_found(first_word)
+        error.keyword_not_found(first_word, line)
 def start(content):
     global program_name
+    global line_number
     
     # if content is empty, then skip it
     if content == "":
@@ -51,6 +71,7 @@ def start(content):
     # read every line
     lines = content.split("\n")
     for line in lines:
+        line_number += 1
         # if line is empty, then skip it
         if line == "": continue
         

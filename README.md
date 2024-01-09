@@ -33,12 +33,27 @@ nöff my_program
 ### Variables
 Variables are used to store data. Variables can be created by using the `nöf` keyword. 
 ```bash
-nöf variable value
+nöf variable = value
 ```
 
 ```bash
-nöf number 5
-nöf word Hello World!
+nöf = number 5
+nöf = word Hello World!
+```
+you can also modify variables by using the `modify` keyword.
+```bash
+nöf num1 = 5
+nöf num2 = 10
+modify num1 num2
+```
+using `add`, `subtract`, `multiply`, `divide`, `modulo`, and `power`.
+```bash
+add num1 5
+sub num2 10
+multiply num3 5
+divide num4 10
+modulo num5 5
+power num6 5
 ```
 
 ### Comments
@@ -52,17 +67,17 @@ Comments are used to explain the code. Comments are ignored by the compiler. Com
 
 ### Printing
 Printing is used to print text to the console. Printing can be done by using the `oink` keyword.
+The future is here so that the oink function will always remove letter `§` from the output.
 
 ```bash
 oink "Hello World!"
 // Prints "Hello World!" to the console
 ```
 ```bash
-nöf word best
-nöf variable klinoff-lang is the $word language
+nöf money = -5000
 
-oink variable
-// Prints "klinoff-lang is the best language" to the console
+oink "I have $money§€ in my bank account"
+
 ```
 
 ### If statements
@@ -72,8 +87,8 @@ Else if statements can be created by using the `nilf` keyword.
 
 
 ```bash
-nöf x 5
-nöf y 3
+nöf x = 5
+nöf y = 3
 
 niff x == y {
     oink "$x is equal to $y"
@@ -98,6 +113,8 @@ nör 5 {
 - `-` - subtraction
 - `*` - multiplication
 - `/` - division
+- `%` - modulo
+- `^` - power
 - `==` - equal to
 - `!=` - not equal to
 - `>` - greater than
@@ -116,4 +133,12 @@ nör 5 {
 - `niffel` - else statement
 - `nilf` - else if statement
 - `nör` - for loop
+
+- `modify` - modify variable
+- `add` - add to variable
+- `sub` - subtract from variable
+- `multiply` - multiply variable
+- `divide` - divide variable
+- `modulo` - modulo variable
+- `power` - power variable
 
