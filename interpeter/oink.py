@@ -1,9 +1,13 @@
 import start, error
 
-def say(text):
+def say():
     has_squigel = False
+    
+    if start.full_line == "oink":
+        print("")
+        return
     # remove the first word
-    text = text.split(" ", 1)[1]
+    text = start.full_line.split(" ", 1)[1]
         
     # check if text is a variable
     if text.startswith("$"):

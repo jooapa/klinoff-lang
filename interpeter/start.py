@@ -1,4 +1,4 @@
-import os, sys, error, oink, variable
+import os, sys, error, oink, variable, if_statement
 
 # nöff    start of program
 # nöf     create variable
@@ -9,16 +9,18 @@ import os, sys, error, oink, variable
 # nör     for loop
 
 keywords = ["nöff", "nöf", "oink", "niff", "niffel", "nilf", "nör", "modify",
-            "add", "sub", "multiply", "divide", "modulo", "power"]
+            "add", "sub", "multiply", "divide", "modulo", "power", "//", 
+            "slingshot", "pig"]
 variables = {}
 program_name = ""
 line_number = 0
+full_line = ""
 nöff_count = 0 # make sure there is only one nöff
 
-def detect_keywords(line):
-    global nöff_count
+def detect_keywords():
+    global nöff_count, full_line
     # detect keywords
-    first_word = line.split(" ")[0]
+    first_word = full_line.split(" ")[0]
     if first_word in keywords:
         if first_word == "nöff":
             if nöff_count == 1:
@@ -26,36 +28,46 @@ def detect_keywords(line):
             else:
                 nöff_count += 1
         elif first_word == "nöf":
-            variable.create(line)
+            variable.create()
         elif first_word == "oink":
-            oink.say(line)
+            oink.say()
         elif first_word == "niff":
-            pass
+            if_statement.if_statement()
         elif first_word == "niffel":
             pass
         elif first_word == "nilf":
             pass
         elif first_word == "nör":
             pass
+        elif first_word == "når":
+            pass
         elif first_word == "modify":
-            variable.modify(line)
+            variable.modify()
         elif first_word == "add":
-            variable.do_operator(line, "add")
+            variable.do_operator("add")
         elif first_word == "sub":
-            variable.do_operator(line, "subtract")
+            variable.do_operator("subtract")
         elif first_word == "multiply":
-            variable.do_operator(line, "multiply")
+            variable.do_operator("multiply")
         elif first_word == "divide":
-            variable.do_operator(line, "divide")
+            variable.do_operator("divide")
         elif first_word == "modulo":
-            variable.do_operator(line, "modulo")
+            variable.do_operator("modulo")
         elif first_word == "power":
-            variable.do_operator(line, "power")    
+            variable.do_operator("power")
+        elif first_word == "//":
+            pass
+        elif first_word == "":
+            if full_line != "":
+                print("fsdfddffdfdfsdfd")
+        elif first_word == "slingshot":
+            pass
+        elif first_word == "pig":
+            pass
     else:
-        error.keyword_not_found(first_word, line)
+        error.keyword_not_found(first_word)
 def start(content):
-    global program_name
-    global line_number
+    global program_name, line_number, full_line
     
     # if content is empty, then skip it
     if content == "":
@@ -76,5 +88,6 @@ def start(content):
         if line == "": continue
         
         # detect keywords
-        detect_keywords(line)
+        full_line = line
+        detect_keywords()
             

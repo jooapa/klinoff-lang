@@ -5,6 +5,18 @@ klinoff-lang is a huge step in the evolution of programming languages. It is a l
 
 Klinoff-lang is a interpreted language, one known interpreter is found on this repository.
 
+## IMPORTANT!!
+Your code must be coded with spaces with clear differene between words. the code must be written exactly like in this documentation.
+
+do this:
+```bash
+oink "Hello World!"
+```
+not this:
+```bash
+oink"Hello World!"
+```
+
 ## file extension
 The file extension for klinoff language is
 - `.klinoff`
@@ -24,7 +36,7 @@ klinoff-lang reads the file from top to bottom, and executes the code line by li
 
 
 ### Starting
-To start a klinoff-lang file, you need to use the `nöff` keyword. This keyword is used to start the program, and follows the name of the program.
+To start a klinoff-lang file, you need to use the `nöff` keyword. This keyword is used to start the program, and follows the name of your program.
 
 ```bash
 nöff my_program
@@ -37,23 +49,24 @@ nöf variable = value
 ```
 
 ```bash
-nöf = number 5
-nöf = word Hello World!
+nöf num1 = 5
+nöf word = Hello World!
 ```
 you can also modify variables by using the `modify` keyword.
 ```bash
 nöf num1 = 5
-nöf num2 = 10
-modify num1 num2
+nöf num2 = 6
+modify $num1 $num2
+// num1 == 6
 ```
 using `add`, `subtract`, `multiply`, `divide`, `modulo`, and `power`.
 ```bash
-add num1 5
-sub num2 10
-multiply num3 5
-divide num4 10
-modulo num5 5
-power num6 5
+add $num1 5
+sub $num2 $num1
+multiply $num3 5
+divide $num4 0.5
+modulo $num5 5
+power $num6 $num1
 ```
 
 ### Comments
@@ -77,7 +90,7 @@ oink "Hello World!"
 nöf money = -5000
 
 oink "I have $money§€ in my bank account"
-
+// Prints "I have -5000€ in my bank account" to the console
 ```
 
 ### If statements
@@ -85,27 +98,39 @@ If statements can be created by using the `niff` keyword.
 Else statements can be created by using the `niffel` keyword. 
 Else if statements can be created by using the `nilf` keyword. 
 
+After make the statemt in given line, you can use `slingshot` keyword to jump to the line you want.
 
 ```bash
 nöf x = 5
 nöf y = 3
 
-niff x == y {
-    oink "$x is equal to $y"
-} nilf x > y {
-    oink "$x is greater than $y"
-} niffel {
-    oink "$x is less than $y"
-}
+niff $x == $y : slingshot label1
+nilf $x > $y : slingshot label2
+niffel : slingshot label3
+
 ```
 
-### for loops
-For loops can be created by using the `nör` keyword. and the second parameter is the times the loop will run.
+### Creating a pig (function)
+You can create a line receiver by using the `pig` keyword.
+```bash
+pig label1
+```
+
+### Slingshot (jump to line)
+You can jump to the line you want by using the `slingshot` keyword. It works like a angry bird, you slingshot to the pig 
+```bash
+slingshot label1
+```
+
+
+### For loops
+For loops can be created by using the `nör` keyword. and the second parameter is the times the loop will run. Use `når` to end the loop.
 
 ```bash
-nör 5 {
-    oink("Hello World!")
-}
+nör 5
+oink "oinking 5 times"
+når // to end the loop
+
 ```
 
 ### Operators
@@ -132,7 +157,10 @@ nör 5 {
 - `niff` - if statement
 - `niffel` - else statement
 - `nilf` - else if statement
-- `nör` - for loop
+- `nör` - start for loop 
+- `når` - end   loop
+- `slingshot` - jump to line or function
+- `pig` - create function
 
 - `modify` - modify variable
 - `add` - add to variable
@@ -141,4 +169,3 @@ nör 5 {
 - `divide` - divide variable
 - `modulo` - modulo variable
 - `power` - power variable
-

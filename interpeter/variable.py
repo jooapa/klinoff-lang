@@ -1,15 +1,18 @@
 import sys, os, start
 
-def create(line):
-    variable_name = line.split(" ")[1]
+def create():
+    
+    variable_name = start.full_line.split(" ")[1]
     # value is the rest of the line
-    variable_value = line.split(" ", 3)[3]
+    variable_value = start.full_line.split(" ", 3)[3]
     start.variables[variable_name] = variable_value
     
 def modify(line):
     variable_name = line.split(" ")[1]
     # value is the rest of the line
     variable_value = line.split(" ", 2)[2]
+    if is_variable(variable_value):
+        variable_value = get_variable_value(variable_value)
     # remove $ from variable name
     variable_name = variable_name.replace("$", "")
     start.variables[variable_name] = variable_value
@@ -23,7 +26,7 @@ def is_variable(variable):
 
 def is_number(number):
     try:
-        number = int(number)
+        number = float(number)
         return True
     except:
         return False
@@ -37,17 +40,17 @@ def get_variable_value(variable):
         start.error.variable_not_found(variable)
 
                
-def convert_to_int(number):
+def convert_to_number(number):
     try:
-        number = int(number)
+        number = float(number)
         return number
     except:
         start.error.invalid_number(number)
 
-def do_operator(line, operator):
-    value1 = line.split(" ")[1]
+def do_operator(operator):
+    value1 = start.full_line.split(" ")[1]
     variable = value1
-    value2 = line.split(" ")[2]
+    value2 = start.full_line.split(" ")[2]
         
     # check if value1 is a variable
     if is_variable(value1):
@@ -59,16 +62,18 @@ def do_operator(line, operator):
     
         
     if operator == "add":
-        result = int(value1) + int(value2)
+        result = float(value1) + float(value2)
     elif operator == "subtract":
-        result = int(value1) - int(value2)
+        result = float(value1) - float(value2)
     elif operator == "multiply":
-        result = int(value1) * int(value2)
+        result = float(value1) * float(value2)
     elif operator == "divide":
-        result = int(value1) / int(value2)
+        if float(value2) == 0:
+            start.error.devision_by_zero()
+        result = float(value1) / float(value2)
     elif operator == "modulo":
-        result = int(value1) % int(value2)
+        result = float(value1) % float(value2)
     elif operator == "power":
-        result = int(value1) ** int(value2)
+        result = float(value1) ** float(value2)
     modify("modify " + str(variable) + " " + str(result))
     
