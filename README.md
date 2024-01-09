@@ -31,10 +31,14 @@ nöff my_program
 ```
 
 ### Variables
-Variables are used to store data. Variables can be created by using the `nöf` keyword. Variables can be assigned a value by using the `=` operator. Variables can be used by using their name.
+Variables are used to store data. Variables can be created by using the `nöf` keyword. 
+```bash
+nöf variable value
+```
 
 ```bash
-nöf variable = 5
+nöf number 5
+nöf word Hello World!
 ```
 
 ### Comments
@@ -47,17 +51,17 @@ Comments are used to explain the code. Comments are ignored by the compiler. Com
 ```
 
 ### Printing
-Printing is used to print text to the console. Printing can be done by using the `noff` keyword.
+Printing is used to print text to the console. Printing can be done by using the `oink` keyword.
 
 ```bash
-noff "Hello World!"
+oink "Hello World!"
 // Prints "Hello World!" to the console
 ```
 ```bash
-nöf word = "best"
-nöf variable = "klinoff-lang is the $word language"
+nöf word best
+nöf variable klinoff-lang is the $word language
 
-noff variable
+oink variable
 // Prints "klinoff-lang is the best language" to the console
 ```
 
@@ -68,15 +72,15 @@ Else if statements can be created by using the `nilf` keyword.
 
 
 ```bash
-nöf x = 5
-nöf y = 3
+nöf x 5
+nöf y 3
 
 niff x == y {
-    noff "$x is equal to $y"
+    oink "$x is equal to $y"
 } nilf x > y {
-    noff "$x is greater than $y"
+    oink "$x is greater than $y"
 } niffel {
-    noff "$x is less than $y"
+    oink "$x is less than $y"
 }
 ```
 
@@ -85,14 +89,29 @@ For loops can be created by using the `nör` keyword. and the second parameter i
 
 ```bash
 nör 5 {
-    noff("Hello World!")
+    oink("Hello World!")
 }
 ```
+
+### Operators
+- `+` - addition
+- `-` - subtraction
+- `*` - multiplication
+- `/` - division
+- `==` - equal to
+- `!=` - not equal to
+- `>` - greater than
+- `<` - less than
+- `>=` - greater than or equal to
+- `<=` - less than or equal to
+
+### Data types
+- `string` - text
 
 ## all keywords
 - `nöff` - start of program
 - `nöf` - create variable
-- `noff` - print
+- `oink` - print
 - `niff` - if statement
 - `niffel` - else statement
 - `nilf` - else if statement
