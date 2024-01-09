@@ -1,5 +1,5 @@
-import os, sys, error, oink, variable, if_statement
-
+import sys, os
+import error, oink, variable, if_statement, slingshot, pig
 # nöff    start of program
 # nöf     create variable
 # oink    print
@@ -8,15 +8,54 @@ import os, sys, error, oink, variable, if_statement
 # nilf    else if statement
 # nör     for loop
 
-keywords = ["nöff", "nöf", "oink", "niff", "niffel", "nilf", "nör", "modify",
+full_code = ""
+keywords = ["nöff", "nöf", "oink", "niff", "nilf", "nör", "modify",
             "add", "sub", "multiply", "divide", "modulo", "power", "//", 
-            "slingshot", "pig"]
+            "slingshot", "pig", "gip", "når", "nöffnöff"]
 variables = {}
-program_name = ""
-line_number = 0
-full_line = ""
-nöff_count = 0 # make sure there is only one nöff
+functions = {
+    # "function_name": [start_line, end_line]
+}
 
+program_name = "" 
+line_number = 0 # current line number
+goto_number = -1 # if this is not -1, then start reading from this line
+full_line = "" # current line in text
+nöff_count = 0 # make sure there is only one nöff
+coming_from_if = False
+last_came = []
+
+def find_words_line(text, word):
+    lines = text.split("\n")
+    line_number = 0
+    for line in lines:
+        line_number += 1
+        if line.startswith(word):
+            break
+    return line_number
+
+def return_line_text(line_number):
+    lines = full_code.split("\n")
+    return lines[line_number-1]
+
+def setup_functions(lines):
+    # add every function to the functions dictionary with the line number
+    # for the start and end of the function, function starts with pig and ends with gip
+    global functions
+    line_number = 0
+    last_function_name = None
+    for line in lines:
+        line_number += 1
+        if line.startswith("pig ") and len(line.split()) > 1:
+            function_name = line.split(" ", 1)[1]
+            functions[function_name] = [line_number, 0]
+            last_function_name = function_name
+        elif line.startswith("gip"):
+            if last_function_name is not None:
+                functions[last_function_name][1] = line_number
+                last_function_name = None
+                
+    
 def detect_keywords():
     global nöff_count, full_line
     # detect keywords
@@ -33,10 +72,8 @@ def detect_keywords():
             oink.say()
         elif first_word == "niff":
             if_statement.if_statement()
-        elif first_word == "niffel":
-            pass
         elif first_word == "nilf":
-            pass
+            if_statement.if_statement()
         elif first_word == "nör":
             pass
         elif first_word == "når":
@@ -61,13 +98,19 @@ def detect_keywords():
             if full_line != "":
                 print("fsdfddffdfdfsdfd")
         elif first_word == "slingshot":
-            pass
+            slingshot.slingshot(full_line)
         elif first_word == "pig":
+            pig.pig()
+        elif first_word == "gip":
+            pig.gip()
+        elif first_word == "nöffnöff":
             pass
     else:
         error.keyword_not_found(first_word)
+        
 def start(content):
-    global program_name, line_number, full_line
+    global program_name, line_number, full_line, full_code, goto_number
+    full_code = content
     
     # if content is empty, then skip it
     if content == "":
@@ -82,12 +125,29 @@ def start(content):
         
     # read every line
     lines = content.split("\n")
-    for line in lines:
-        line_number += 1
+    
+    setup_functions(lines)
+    i = 1
+    while i <= len(lines):
+        # if goto_number is not -1, start reading from goto_number down
+        if goto_number != -1:
+            i = goto_number
+            goto_number = -1
+            continue
+        
+        full_line = lines[i-1]
+        line_number = i
+        
+        input()
+        print(str(line_number) + "| " + full_line, end="")
+        
         # if line is empty, then skip it
-        if line == "": continue
+        if full_line == "":
+            i += 1
+            continue
         
         # detect keywords
-        full_line = line
         detect_keywords()
+        
+        i += 1
             

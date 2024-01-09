@@ -38,3 +38,13 @@ def devision_by_zero():
     print("Error: Devision by zero")
     line_error()
     exit()
+    
+def function_not_found(function):
+    print("Error: Function \"" + function + "\" not found")
+    line_error()
+    exit()
+    
+def operator_not_found(operator):
+    print("Error: Operator \"" + operator + "\" not found")
+    line_error()
+    exit()

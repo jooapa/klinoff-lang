@@ -94,32 +94,32 @@ oink "I have $money§€ in my bank account"
 ```
 
 ### If statements
-If statements can be created by using the `niff` keyword. 
-Else statements can be created by using the `niffel` keyword. 
-Else if statements can be created by using the `nilf` keyword. 
+If statements can be created by using the `niff` keyword. else if statements can be created by using the `nilf` keyword.
 
 After make the statemt in given line, you can use `slingshot` keyword to jump to the line you want.
 
 ```bash
-nöf x = 5
-nöf y = 3
+nöf num1 = 1
+nöf num2 = 1
 
-niff $x == $y : slingshot label1
-nilf $x > $y : slingshot label2
-niffel : slingshot label3
+niff $num1 > $num2 : slingshot possu1
+nilf $num1 < $num2 : slingshot possu2
+nilf $num1 == $num2 : slingshot possu3
 
 ```
 
 ### Creating a pig (function)
 You can create a line receiver by using the `pig` keyword.
 ```bash
-pig label1
+pig possu
+oink "Hello World!"
+gip
 ```
 
 ### Slingshot (jump to line)
 You can jump to the line you want by using the `slingshot` keyword. It works like a angry bird, you slingshot to the pig 
 ```bash
-slingshot label1
+slingshot possu
 ```
 
 
@@ -140,6 +140,7 @@ når // to end the loop
 - `/` - division
 - `%` - modulo
 - `^` - power
+
 - `==` - equal to
 - `!=` - not equal to
 - `>` - greater than
@@ -155,12 +156,12 @@ når // to end the loop
 - `nöf` - create variable
 - `oink` - print
 - `niff` - if statement
-- `niffel` - else statement
 - `nilf` - else if statement
 - `nör` - start for loop 
 - `når` - end   loop
 - `slingshot` - jump to line or function
 - `pig` - create function
+- `gip` - end function
 
 - `modify` - modify variable
 - `add` - add to variable
@@ -169,3 +170,48 @@ når // to end the loop
 - `divide` - divide variable
 - `modulo` - modulo variable
 - `power` - power variable
+
+## Example
+## Cubic root Example
+```bash
+nöff my_program
+
+nöf num1 = 16
+nöf num2 = 2
+
+slingshot cubic_root_num1
+
+// function to cubic root the num1
+pig cubic_root_num1
+
+multiply $num1 $num2
+power $num1 0.333
+
+oink "$num1"
+
+gip
+    
+```
+## Simple if statement Example
+```bash
+nöff my_program
+
+nöf num1 = 16
+nöf num2 = 2
+
+niff $num1 > $num2 : slingshot possu1
+nilf $num1 < $num2 : slingshot possu2
+nilf $num1 == $num2 : slingshot possu3
+
+pig possu1
+oink "num1 is bigger than num2"
+gip
+
+pig possu2
+oink "num1 is smaller than num2"
+gip
+
+pig possu3
+oink "num1 is equal to num2"
+gip
+```
