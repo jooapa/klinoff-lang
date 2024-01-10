@@ -4,6 +4,7 @@
 
 ## Syntax highlighting
 - [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=Jooapa.klinoff-lang-syntax-highlighting)
+- [Github](https://github.com/jooapa/klinoff-lang-syntax-higlighting)
 
 ## Introduction
 klinoff-lang is a huge step in the evolution of programming languages. It is a language that is easy to learn and use, but really powerful.
