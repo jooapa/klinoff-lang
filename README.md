@@ -24,9 +24,10 @@ and also Happy to tell youu guys, that klinoff-lang is parthnered with EcmaScrip
 
 ## file extension
 The file extension for klinoff language is
-- `.klinoff`
 - `.kln`
 - `.nöff`
+
+and just in case for everybodys sanity, if you want some working color syntax highlighting, use `.sh` extension for some reason `.nöff` works but not as good.
 
 ## Features
 - Easy to learn
@@ -175,6 +176,21 @@ når // to end the loop
 - `divide` - divide variable
 - `modulo` - modulo variable
 - `power` - power variable
+
+# Using the interpreter
+## Installation
+To install the interpreter, you need to have python3 installed. You can install python3 from [here](https://www.python.org/downloads/).
+
+After installing python3, you need to install the interpreter. by cloning this repository.
+## Usage
+```bash
+python interpeter/interpret.py example.nöff
+```
+you can you the `--debug` or `-d` flag to see the debug information.
+```bash
+python interpeter/interpret.py example.nöff -d
+```
+
 
 ## Example
 ## Cubic root Example
