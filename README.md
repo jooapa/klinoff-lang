@@ -1,5 +1,10 @@
 # klinoff-lang
 
+<img src="https://raw.githubusercontent.com/jooapa/klinoff-lang/main/logo.png" width="200" height="200">
+
+## Syntax highlighting
+- [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=Jooapa.klinoff-lang-syntax-higlighting)
+
 ## Introduction
 klinoff-lang is a huge step in the evolution of programming languages. It is a language that is easy to learn and use, but really powerful.
 
