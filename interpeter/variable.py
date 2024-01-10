@@ -1,16 +1,22 @@
-import sys, os, start
+import sys, os, start, error
 
 def create():
     
     variable_name = start.full_line.split(" ")[1]
     # value is the rest of the line
-    variable_value = start.full_line.split(" ", 3)[3]
+    try:
+        variable_value = start.full_line.split(" ", 3)[3]
+    except:
+        error.no_variable_value()
     start.variables[variable_name] = variable_value
     
 def modify(line):
     variable_name = line.split(" ")[1]
     # value is the rest of the line
-    variable_value = line.split(" ", 2)[2]
+    try:
+        variable_value = line.split(" ", 2)[2]
+    except:
+        error.no_variable_name()
     if is_variable(variable_value):
         variable_value = get_variable_value(variable_value)
     # remove $ from variable name
@@ -48,9 +54,12 @@ def convert_to_number(number):
         start.error.invalid_number(number)
 
 def do_operator(operator):
-    value1 = start.full_line.split(" ")[1]
-    variable = value1
-    value2 = start.full_line.split(" ")[2]
+    try:
+        value1 = start.full_line.split(" ")[1]
+        variable = value1
+        value2 = start.full_line.split(" ")[2]
+    except:
+        error.no_variable_name()
         
     # check if value1 is a variable
     if is_variable(value1):
@@ -83,5 +92,6 @@ def do_operator(operator):
         result = float(value1) % float(value2)
     elif operator == "power":
         result = float(value1) ** float(value2)
+
     modify("modify " + str(variable) + " " + str(result))
     

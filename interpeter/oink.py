@@ -1,8 +1,6 @@
 import start, error
 
 def say():
-    has_squigel = False
-    
     if start.full_line == "oink":
         print("")
         return
@@ -27,9 +25,9 @@ def say():
     for word in words:
         if word.startswith("$"):
             if "§" in word:
-                has_squigel = True
                 word = word.split("§")[0]
                 word = word.replace("§", " ")
+                
             word = word.replace("$", "")
             if word in start.variables:
                 variable = start.variables[word]

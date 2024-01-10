@@ -115,10 +115,10 @@ nilf $num1 == $num2 : slingshot possu3
 ```
 
 ### Creating a pig (function)
-You can create a line receiver by using the `pig` keyword.
+You can create a line receiver by using the `pig` keyword. Use `gip` to end the function.
 ```bash
 pig possu
-oink "Hello World!"
+    oink "Hello World!"
 gip
 ```
 
@@ -130,12 +130,21 @@ slingshot possu
 
 
 ### For loops
-For loops can be created by using the `nör` keyword. and the second parameter is the times the loop will run. Use `når` to end the loop.
+For loops can be created by using the `nör` keyword. Second parameter is for the loop name. and the third parameter is the times the loop will run. Use `når` to end the loop.
+
+Be careful, you cannot use the same loop name twice.
 
 ```bash
-nör 5
-oink "oinking 5 times"
-når // to end the loop
+nör oink 5
+    oink "oinking 5 times"
+når 
+
+```
+```bash
+nöf times = 5
+    nör oink $times
+    oink "oinking $times times"
+når 
 
 ```
 
@@ -205,10 +214,10 @@ slingshot cubic_root_num1
 // function to cubic root the num1
 pig cubic_root_num1
 
-multiply $num1 $num2
-power $num1 0.333
+    multiply $num1 $num2
+    power $num1 0.333
 
-oink "$num1"
+    oink "$num1"
 
 gip
 
@@ -225,15 +234,27 @@ nilf $num1 < $num2 : slingshot possu2
 nilf $num1 == $num2 : slingshot possu3
 
 pig possu1
-oink "num1 is bigger than num2"
+    oink "$num1 is bigger than $num2"
 gip
 
 pig possu2
-oink "num1 is smaller than num2"
+    oink "$num1 is smaller than $num2"
 gip
 
 pig possu3
-oink "num1 is equal to num2"
+    oink "$num1 is equal to $num2"
 gip
+
+```
+## Simple for loop Example
+```bash
+nöff my_program
+
+nöf num1 = 16
+nöf num2 = 2
+
+nör oink 5
+    oink "oinking 5 times"
+når 
 
 ```

@@ -57,3 +57,43 @@ def not_number(value):
     print("Error: \"" + value + "\" is not a number")
     line_error()
     exit()
+    
+def invalid_for_loop():
+    print("Error: Invalid for loop")
+    line_error()
+    exit()
+    
+def loop_not_found(loop):
+    print("Error: Loop \"" + loop + "\" not found")
+    line_error()
+    exit()
+    
+def no_variable_value():
+    print("Error: No variable value")
+    line_error()
+    exit()
+    
+def invalid_if_statement():
+    print("Error: Invalid if statement")
+    line_error()
+    exit()
+    
+def no_variable_name():
+    print("Error: No variable name")
+    line_error()
+    exit()
+    
+def invalid_slingshot():
+    print("Error: Invalid slingshot")
+    line_error()
+    exit()
+    
+def invalid_pig():
+    print("Error: Invalid pig")
+    line_error()
+    exit()
+    
+def nothing_to_gip():
+    print("Error: Nothing to gip")
+    line_error()
+    exit()

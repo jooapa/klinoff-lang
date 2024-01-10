@@ -1,15 +1,15 @@
-nöff my_program
+nöff complex_program
 
-nöf num1 = 16
-nöf num2 = d
+nöf count = 0
+nöf limit = 5
 
-slingshot cubic_root_num1
+nör main_loop $limit
+    oink "Current count: $count"
+    add $count 1
+når
 
-// function to cubic root the num1
-pig cubic_root_num1
+niff $count == $limit : slingshot end_program
 
-divide num1 1
-
-oink "$num1"
-
+pig end_program
+oink "Program finished with count: $count"
 gip

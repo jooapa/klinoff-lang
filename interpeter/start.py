@@ -1,5 +1,5 @@
 import sys, os
-import error, oink, variable, if_statement, slingshot, pig
+import error, oink, variable, if_statement, slingshot, pig, for_loop
 # nöff    start of program
 # nöf     create variable
 # oink    print
@@ -15,6 +15,9 @@ keywords = ["nöff", "nöf", "oink", "niff", "nilf", "nör", "modify",
 variables = {}
 functions = {
     # "function_name": [start_line, end_line]
+}
+for_loops = {
+    # "for_loop_name 4": [start_line, end_line]
 }
 
 program_name = "" 
@@ -55,7 +58,24 @@ def setup_functions(lines):
             if last_function_name is not None:
                 functions[last_function_name][1] = line_number
                 last_function_name = None
-                
+
+def setup_for_loops(lines):
+    # add every for loop to the for_loops dictionary with the line number
+    # for the start and end of the for loop, for loop starts with nör and ends with når
+    global for_loops
+    line_number = 0
+    last_for_loop_name = None
+    for line in lines:
+        line_number += 1
+        if line.startswith("nör ") and len(line.split()) > 1:
+            for_loop_name = line.split(" ", 1)[1]
+            for_loops[for_loop_name] = [line_number, 0]
+            last_for_loop_name = for_loop_name
+        elif line.startswith("når"):
+            if last_for_loop_name is not None:
+                for_loops[last_for_loop_name][1] = line_number
+                last_for_loop_name = None
+                   
 def debugger():
     if Debug_mode:
         input()
@@ -80,11 +100,11 @@ def detect_keywords():
         elif first_word == "nilf":
             if_statement.if_statement()
         elif first_word == "nör":
-            pass
+            for_loop.start_loop()
         elif first_word == "når":
-            pass
+            for_loop.end_loop()
         elif first_word == "modify":
-            variable.modify()
+            variable.modify(full_line)
         elif first_word == "add":
             variable.do_operator("add")
         elif first_word == "sub":
@@ -126,7 +146,7 @@ def start(content):
         error.invalid_file()
     else:
         program_name = content.split("\n")[0].replace("nöff ", "")
-        print("Program name: " + program_name)
+        print("Program: " + program_name)
         
     # read every line
     lines = content.split("\n")
@@ -134,8 +154,9 @@ def start(content):
     # last line should be empty
     if lines[-1] != "":
         error.last_line_not_empty()
-    
+        
     setup_functions(lines)
+    setup_for_loops(lines)
     i = 1
     while i <= len(lines):
         # if goto_number is not -1, start reading from goto_number down
@@ -143,7 +164,6 @@ def start(content):
             i = goto_number
             goto_number = -1
             continue
-        
         full_line = lines[i-1]
         line_number = i
         
@@ -158,4 +178,4 @@ def start(content):
         detect_keywords()
         
         i += 1
-            
+        
