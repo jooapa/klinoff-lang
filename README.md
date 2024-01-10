@@ -2,6 +2,14 @@
 
 <img src="https://raw.githubusercontent.com/jooapa/klinoff-lang/main/logo.png" width="200" height="200">
 
+## Table of contents
+- [Introduction](#introduction)
+- [IMPORTANT!!](#important)
+- [EVEN MORE IMPORTANT!!](#even-more-important)
+- [Documentation](#documentation)
+- [Using the interpreter](#using-the-interpreter)
+
+
 ## Syntax highlighting
 - [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=Jooapa.klinoff-lang-syntax-highlighting)
 - [Github](https://github.com/jooapa/klinoff-lang-syntax-higlighting)
@@ -26,7 +34,7 @@ oink"Hello World!"
 ## EVEN MORE IMPORTANT!!
 klinoff-lang is case sensitive, so you must write the code exactly like in this documentation.
 
-and also Happy to tell youu guys, that klinoff-lang is parthnered with EcmaScript, so you HAVE TO leave a empty line at the end of the file.
+And also Happy to tell youu guys, that klinoff-lang is partnered with EcmaScript, so you HAVE TO leave a empty line at the end of the file.
 
 ## file extension
 The file extension for klinoff language is
@@ -192,7 +200,7 @@ når
 - `modulo` - modulo variable
 - `power` - power variable
 
-# Using the interpreter
+## Using the interpreter
 ## Installation
 To install the interpreter, you need to have python3 installed. You can install python3 from [here](https://www.python.org/downloads/).
 
@@ -264,3 +272,9 @@ nör oink 5
 når 
 
 ```
+# Contributors
+## Creator
+- [Jooapa](https://github.com/jooapa)
+
+## Contributors
+- [miskamero](https://github.com/miskamero)
