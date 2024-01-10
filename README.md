@@ -99,7 +99,7 @@ oink "I have $money§€ in my bank account"
 ```
 
 ### If statements
-If statements can be created by using the `niff` keyword. else if statements can be created by using the `nilf` keyword.
+If statements can be created by using the `niff` keyword. else if statements can be created by using the `nilf` keyword. klinoff-lang is so advanced that it doesnt need the `else` statements.
 
 After make the statemt in given line, you can use `slingshot` keyword to jump to the line you want.
 

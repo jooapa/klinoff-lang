@@ -27,8 +27,13 @@ def interpret(args):
     # absolute path
     klinoff_file = get_absolute_path(args[0])
     klinoff_content = get_contents(klinoff_file)
+    
+    for arg in args:
+        if arg == "--debug" or arg == "-d":
+            start.Debug_mode = True
+            
     os.system("cls")
     start.start(klinoff_content)
     
 if __name__ == "__main__":
-    interpret(sys.argv[1:])
+    interpret(sys.argv[1::])

@@ -1,16 +1,19 @@
 nöff my_program
 
-pig kakka
-oink "KAKAKAKAKKA"
+nöf num1 = 1
+nöf num2 = 1
+
+niff $num1 > $num2 : slingshot possu1
+nilf $num1 < $num2 : slingshot possu2
+nilf $num1 == $num2 : slingshot possu3
+
+pig possu1
+oink "num1 is bigger than num2"
+gip
+pig possu2
+oink "num1 is smaller than num2"
 gip
 
-pig homo
-oink "homolandia"
+pig possu3
+oink "num1 is equal to num2"
 gip
-
-
-slingshot kakka
-
-oink "OOEEEOEOEOEOOE"
-
-slingshot homo

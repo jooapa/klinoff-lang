@@ -20,9 +20,10 @@ def gip():
         
         while True:
             # goto next line as long as it is not an line with "nilf"
-            start.goto_number += 1
-            if not lines[start.goto_number - 1].startswith("niff"):
+            if not lines[start.goto_number - 1].startswith("nilf"):
+                start.goto_number += 1
                 break
-    
+            start.goto_number += 1
+        start.goto_number -= 1
     
     # print(start.goto_number)
