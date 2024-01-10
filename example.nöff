@@ -1,15 +1,9 @@
 nöff complex_program
 
 nöf count = 0
-nöf limit = 5
 
-nör main_loop $limit
-    oink "Current count: $count"
-    add $count 1
+
+nör possu 5
+oink "kakkaa on $count kertaa"
+add $count 1
 når
-
-niff $count == $limit : slingshot end_program
-
-pig end_program
-oink "Program finished with count: $count"
-gip
