@@ -52,3 +52,8 @@ def operator_not_found(operator):
 def last_line_not_empty():
     print("EcmaScript Error: Last line must be empty")
     exit()
+    
+def not_number(value):
+    print("Error: \"" + value + "\" is not a number")
+    line_error()
+    exit()

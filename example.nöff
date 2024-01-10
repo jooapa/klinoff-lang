@@ -8,7 +8,7 @@ slingshot cubic_root_num1
 // function to cubic root the num1
 pig cubic_root_num1
 
-divide $num1 0
+divide num1 1
 
 oink "$num1"
 

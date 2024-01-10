@@ -60,6 +60,14 @@ def do_operator(operator):
         value2 = get_variable_value(value2)
     # convert value1 and value2 to int
     
+    if is_number(value1):
+        value1 = convert_to_number(value1)
+    else:
+        start.error.not_number(value1)
+    if is_number(value2):
+        value2 = convert_to_number(value2)
+    else:
+        start.error.not_number(value2)
         
     if operator == "add":
         result = float(value1) + float(value2)
