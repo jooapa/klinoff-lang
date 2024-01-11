@@ -1,9 +1,7 @@
 nöff complex_program
 
-nöf count = 0
+nöf name = pig
 
+input $name "why is your name $name§? Change it to: "
 
-nör possu 5
-oink "kakkaa on $count kertaa"
-add $count 1
-når
+oink "Hello $name§!"

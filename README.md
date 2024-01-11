@@ -113,21 +113,6 @@ oink "I have $money§€ in my bank account"
 // Prints "I have -5000€ in my bank account" to the console
 ```
 
-### If statements
-If statements can be created by using the `niff` keyword. else if statements can be created by using the `nilf` keyword. klinoff-lang is so advanced that it doesnt need the `else` statements.
-
-After make the statemt in given line, you can use `slingshot` keyword to jump to the line you want.
-
-```bash
-nöf num1 = 1
-nöf num2 = 1
-
-niff $num1 > $num2 : slingshot possu1
-nilf $num1 < $num2 : slingshot possu2
-nilf $num1 == $num2 : slingshot possu3
-
-```
-
 ### Creating a pig (function)
 You can create a line receiver by using the `pig` keyword. Use `gip` to end the function.
 ```bash
@@ -142,6 +127,20 @@ You can jump to the line you want by using the `slingshot` keyword. It works lik
 slingshot possu
 ```
 
+### If statements
+If statements can be created by using the `niff` keyword. else if statements can be created by using the `nilf` keyword. klinoff-lang is so advanced that it doesnt need the `else` statements.
+
+After make the statemt in given line, you can use `slingshot` keyword to jump to the line you want.
+
+```bash
+nöf num1 = 1
+nöf num2 = 1
+
+niff $num1 > $num2 : slingshot possu1
+nilf $num1 < $num2 : slingshot possu2
+nilf $num1 == $num2 : slingshot possu3
+
+```
 
 ### For loops
 For loops can be created by using the `nör` keyword. Second parameter is for the loop name. and the third parameter is the times the loop will run. Use `når` to end the loop.
@@ -162,14 +161,25 @@ når
 
 ```
 
-### Operators
-- `+` - addition
-- `-` - subtraction
-- `*` - multiplication
-- `/` - division
-- `%` - modulo
-- `^` - power
+### Input
+The input will be saved to the variable you give to the input function. last parameter is the question you want to ask.
+```bash
+nöf name = pig
 
+input $name "why is your name $name§? Change it to: "
+
+oink "Hello $name§!"
+```
+
+
+### Data types
+- `string` - text
+
+### Built-in secret functions
+- `nöffnöff` - return the program name __not working yet__
+
+## all keywords
+### Operators
 - `==` - equal to
 - `!=` - not equal to
 - `>` - greater than
@@ -177,10 +187,7 @@ når
 - `>=` - greater than or equal to
 - `<=` - less than or equal to
 
-### Data types
-- `string` - text
-
-## all keywords
+### Keywords
 - `nöff` - start of program
 - `nöf` - create variable
 - `oink` - print
@@ -191,14 +198,16 @@ når
 - `slingshot` - jump to line or function
 - `pig` - create function
 - `gip` - end function
+- `input` - input
 
-- `modify` - modify variable
-- `add` - add to variable
-- `sub` - subtract from variable
-- `multiply` - multiply variable
-- `divide` - divide variable
-- `modulo` - modulo variable
-- `power` - power variable
+### Variable modifiers
+- `modify`
+- `add`
+- `sub` - subtract
+- `multiply`
+- `divide`
+- `modulo`
+- `power`
 
 ## Using the interpreter
 ## Installation

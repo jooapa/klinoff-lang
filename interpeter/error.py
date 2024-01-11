@@ -97,3 +97,8 @@ def nothing_to_gip():
     print("Error: Nothing to gip")
     line_error()
     exit()
+    
+def no_quotes_in_input():
+    print("Error: No quotes in input")
+    line_error()
+    exit()

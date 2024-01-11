@@ -1,5 +1,5 @@
 import sys, os
-import error, oink, variable, if_statement, slingshot, pig, for_loop
+import error, oink, variable, if_statement, slingshot, pig, for_loop, input_func
 # nöff    start of program
 # nöf     create variable
 # oink    print
@@ -11,7 +11,7 @@ import error, oink, variable, if_statement, slingshot, pig, for_loop
 full_code = ""
 keywords = ["nöff", "nöf", "oink", "niff", "nilf", "nör", "modify",
             "add", "sub", "multiply", "divide", "modulo", "power", "//", 
-            "slingshot", "pig", "gip", "når", "nöffnöff"]
+            "slingshot", "pig", "gip", "når", "nöffnöff", "input"]
 variables = {}
 functions = {
     # "function_name": [start_line, end_line]
@@ -130,6 +130,8 @@ def detect_keywords():
             pig.gip()
         elif first_word == "nöffnöff":
             pass
+        elif first_word == "input":
+            input_func.input_func()
     else:
         error.keyword_not_found(first_word)
         

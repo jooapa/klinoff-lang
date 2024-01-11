@@ -6,7 +6,11 @@ def say():
         return
     # remove the first word
     text = start.full_line.split(" ", 1)[1]
-        
+    
+    text = say_quotes(text)
+    print(text)
+    
+def say_quotes(text):
     # check if text is a variable
     if text.startswith("$"):
         text = text.replace("$", "")
@@ -18,7 +22,7 @@ def say():
     # if text is a string, then remove the quotes
     elif text.startswith("\"") and text.endswith("\""):
         text = text.replace("\"", "")
-    
+
     # split text into words and check if they are variables
 
     words = text.split(" ")
@@ -27,15 +31,15 @@ def say():
             if "§" in word:
                 word = word.split("§")[0]
                 word = word.replace("§", " ")
-                
+
             word = word.replace("$", "")
             if word in start.variables:
                 variable = start.variables[word]
             else:
                 error.variable_not_found(word)
-            
+
             # replace word with variable
             text = text.replace("$" + word, variable)
-    
+
     text = text.replace("§", "")
-    print(text)
+    return text
