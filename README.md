@@ -5,23 +5,28 @@
 ## Table of contents
 - [Introduction](#introduction)
 - [IMPORTANT!!](#important)
+- [file extension](#file-extension)
+- [Features](#features)
 - [Documentation](#documentation)
--   [Starting](#starting)
--   [Variables](#variables)
--   [Comments](#comments)
--   [Printing](#printing)
--   [Creating a pig (function)](#creating-a-pig-function)
--   [Slingshot (jump to line)](#slingshot-jump-to-line)
--   [If statements](#if-statements)
--   [For loops](#for-loops)
--   [Input](#input)
--   [Data types](#data-types)
--   [Built-in secret functions](#built-in-secret-functions)
--   [all keywords](#all-keywords)
--   [Operators](#operators)
--   [Keywords](#keywords)
--   [Variable modifiers](#variable-modifiers)
+    - [Starting](#starting)
+    - [Variables](#variables)
+    - [Comments](#comments)
+    - [Printing](#printing)
+    - [Creating a pig (function)](#creating-a-pig-function)
+    - [Slingshot (jump to line)](#slingshot-jump-to-line)
+    - [If statements](#if-statements)
+    - [For loops](#for-loops)
+    - [Input](#input)
+    - [Data types](#data-types)
+    - [Built-in secret functions](#built-in-secret-functions)
+    - [all keywords](#all-keywords)
+    - [Operators](#operators)
+    - [Keywords](#keywords)
+    - [Variable modifiers](#variable-modifiers)
 - [Using the interpreter](#using-the-interpreter)
+    - [Installation](#installation)
+    - [Usage](#usage)
+- [Examples](#examples)
 
 
 ## Syntax highlighting
@@ -239,7 +244,7 @@ python interpeter/interpret.py example.nöff -d
 ```
 
 
-## Example
+## Examples
 ## Cubic root Example
 ```bash
 nöff my_program
