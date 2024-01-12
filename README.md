@@ -55,6 +55,8 @@ oink"Hello World!"
 
 And also Happy to tell youu guys, that klinoff-lang is partnered with EcmaScript, so you HAVE TO leave a empty line at the end of the file.
 
+A NEW revolutionary feature is here, for the non-users whp doesn't have access to letter `ö` in their keyboard, you can use `o`.
+
 ## file extension
 The file extension for klinoff language is
 - `.kln`

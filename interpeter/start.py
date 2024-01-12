@@ -12,7 +12,7 @@ full_code = ""
 keywords = ["nöff", "nöf", "oink", "niff", "nilf", "snort", "modify",
             "add", "sub", "multiply", "divide", "modulo", "power", "//", 
             "slingshot", "pig", "gip", "pork", "nöffnöff", "input",
-            "pop"]
+            "pop", "noff", "nof"]
 variables = {}
 functions = {
     # "function_name": [start_line, end_line]
@@ -87,12 +87,12 @@ def detect_keywords():
     # detect keywords
     first_word = full_line.split(" ")[0]
     if first_word in keywords:
-        if first_word == "nöff":
+        if first_word == "nöff" or first_word == "noff":
             if nöff_count == 1:
                 error.too_much_nöff()
             else:
                 nöff_count += 1
-        elif first_word == "nöf":
+        elif first_word == "nöf" or first_word == "nof":
             variable.create()
         elif first_word == "oink":
             oink.say()
@@ -122,7 +122,7 @@ def detect_keywords():
             pass
         elif first_word == "":
             if full_line != "":
-                print("fsdfddffdfdfsdfd")
+                print(full_line)
         elif first_word == "slingshot":
             slingshot.slingshot(full_line)
         elif first_word == "pig":
@@ -147,10 +147,12 @@ def start(content):
         error.invalid_file()
         
     # if first line does not start with "nöff", then it is not a valid klinoff file
-    if content.split("\n")[0].startswith("nöff") == False:
+    if not content.split("\n")[0].startswith("nöff") \
+    and not content.split("\n")[0].startswith("noff"):
         error.invalid_file()
     else:
-        program_name = content.split("\n")[0].replace("nöff ", "")
+        program_name = content.split("\n")[0].replace("nöff ", "") \
+                                             .replace("noff ", "")
         print("Program: " + program_name)
         
     # read every line

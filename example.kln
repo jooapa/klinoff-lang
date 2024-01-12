@@ -1,8 +1,8 @@
-nöff infi_loop_example
+noff infi_loop_example
 
-nöf num = 1
+nof num = 1
 
-snort loop infinite
+snort loop 500
     add $num 1
     oink "number is $num§"
     nilf $num >= 100.0 : pop
