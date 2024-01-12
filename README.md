@@ -27,7 +27,10 @@
     - [Installation](#installation)
     - [Usage](#usage)
 - [Examples](#examples)
-
+    - [Cubic root Example](#cubic-root-example)
+    - [Simple if statement Example](#simple-if-statement-example)
+    - [Simple for loop Example](#simple-for-loop-example)
+    - [Simple input Example](#simple-input-example)
 
 ## Syntax highlighting
 - [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=Jooapa.klinoff-lang-syntax-highlighting)
@@ -247,7 +250,7 @@ python interpeter/interpret.py example.nöff -d
 ## Examples
 ## Cubic root Example
 ```bash
-nöff my_program
+nöff cubic_root_example
 
 nöf num1 = 16
 nöf num2 = 2
@@ -267,7 +270,7 @@ gip
 ```
 ## Simple if statement Example
 ```bash
-nöff my_program
+nöff if_example
 
 nöf num1 = 16
 nöf num2 = 2
@@ -291,16 +294,28 @@ gip
 ```
 ## Simple for loop Example
 ```bash
-nöff my_program
+nöff loop_example
 
-nöf num1 = 16
-nöf num2 = 2
+nöf num = 5
 
 nör oink 5
-    oink "oinking 5 times"
+sub $num 1
+    oink "oinking $num times"
 når 
 
 ```
+## Simple input Example
+```bash
+nöff input_example
+
+nöf name = pig
+
+input $name "why is your name $name§? Change it to: "
+
+oink "Hello $name§!"
+
+```
+
 # Contributors
 ## Creator
 - [Jooapa](https://github.com/jooapa)
