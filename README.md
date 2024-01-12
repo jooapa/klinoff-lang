@@ -299,7 +299,7 @@ nöff loop_example
 nöf num = 5
 
 nör oink 5
-sub $num 1
+    sub $num 1
     oink "oinking $num times"
 når 
 
