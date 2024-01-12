@@ -342,7 +342,7 @@ nöff infi_loop_example
 
 nöf num = 1
 
-snort loop 500
+snort loop infinite
     add $num 1
     oink "number is $num§"
     nilf $num >= 100.0 : pop
