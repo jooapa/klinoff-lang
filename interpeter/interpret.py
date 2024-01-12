@@ -42,9 +42,9 @@ def interpret(args):
             no_comment_klinoff_content += line.split("//")[0] + "\n"
         else:
             no_comment_klinoff_content += line + "\n"
-    
-    print(no_comment_klinoff_content)
-    input()
+            
+    # remove last \n
+    no_comment_klinoff_content = no_comment_klinoff_content[:-1]
     
     for arg in args:
         if arg == "--debug" or arg == "-d":

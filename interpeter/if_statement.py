@@ -17,8 +17,10 @@ def if_statement():
         value1 = variable.get_variable_value(value1)
     if variable.is_variable(value2):
         value2 = variable.get_variable_value(value2)
-    value1 = variable.convert_to_number(value1)
-    value2 = variable.convert_to_number(value2)
+    if variable.is_number(value1):
+        variable.convert_to_number(value1)
+    if variable.is_number(value2):
+        variable.convert_to_number(value2)
     
     if operator == ">":
         if value1 > value2:

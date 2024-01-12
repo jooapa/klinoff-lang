@@ -6,12 +6,12 @@ import error, oink, variable, if_statement, slingshot, pig, for_loop, input_func
 # niff    if statement
 # niffel  else statement
 # nilf    else if statement
-# nör     for loop
+# sow     for loop
 
 full_code = ""
-keywords = ["nöff", "nöf", "oink", "niff", "nilf", "nör", "modify",
+keywords = ["nöff", "nöf", "oink", "niff", "nilf", "sow", "modify",
             "add", "sub", "multiply", "divide", "modulo", "power", "//", 
-            "slingshot", "pig", "gip", "når", "nöffnöff", "input"]
+            "slingshot", "pig", "gip", "piglet", "nöffnöff", "input"]
 variables = {}
 functions = {
     # "function_name": [start_line, end_line]
@@ -61,17 +61,17 @@ def setup_functions(lines):
 
 def setup_for_loops(lines):
     # add every for loop to the for_loops dictionary with the line number
-    # for the start and end of the for loop, for loop starts with nör and ends with når
+    # for the start and end of the for loop, for loop starts with sow and ends with piglet
     global for_loops
     line_number = 0
     last_for_loop_name = None
     for line in lines:
         line_number += 1
-        if line.startswith("nör ") and len(line.split()) > 1:
+        if line.startswith("sow ") and len(line.split()) > 1:
             for_loop_name = line.split(" ", 1)[1]
             for_loops[for_loop_name] = [line_number, 0]
             last_for_loop_name = for_loop_name
-        elif line.startswith("når"):
+        elif line.startswith("piglet"):
             if last_for_loop_name is not None:
                 for_loops[last_for_loop_name][1] = line_number
                 last_for_loop_name = None
@@ -99,9 +99,9 @@ def detect_keywords():
             if_statement.if_statement()
         elif first_word == "nilf":
             if_statement.if_statement()
-        elif first_word == "nör":
+        elif first_word == "sow":
             for_loop.start_loop()
-        elif first_word == "når":
+        elif first_word == "piglet":
             for_loop.end_loop()
         elif first_word == "modify":
             variable.modify(full_line)

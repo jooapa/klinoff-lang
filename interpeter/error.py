@@ -107,3 +107,8 @@ def slingshot_goto_not_found(slingshot):
     print("Error: Slingshot goto \"" + slingshot + "\" not found")
     line_error()
     exit()
+    
+def invalid_operator(operator):
+    print("Error: Invalid operator \"" + operator + "\"")
+    line_error()
+    exit()

@@ -167,23 +167,38 @@ nilf $num1 == $num2 : slingshot possu3
 ```
 
 ### For loops
-For loops can be created by using the `nör` keyword. Second parameter is for the loop name. and the third parameter is the times the loop will run. Use `når` to end the loop.
+For loops can be created by using the `sow` keyword. Second parameter is for the loop name. and the third parameter is the times the loop will run. Use `piglet` to end the loop.
 
 Be careful, you cannot use the same loop name twice.
 
 ```bash
-nör oink 5
+sow oink 5
     oink "oinking 5 times"
-når 
+piglet 
 
 ```
 ```bash
 nöf times = 5
-    nör oink $times
+
+sow oink $times
     oink "oinking $times times"
-når 
+piglet 
 
 ```
+
+### While loops
+While loops can be created by using the `snort` keyword. Second parameter is for the loop name. If you are wondering you can escape the loop by using the `pop` keyword. Use `pork` to mark the end of the loop. `pop` can be used in if statements.
+
+Be careful, you cannot use the same loop name twice.
+
+```bash
+nöf num = 5
+
+snort oink
+    oink "oinking $num times"
+    sub $num 1
+    pop $num == 0
+pork
 
 ### Input
 The input will be saved to the variable you give to the input function. last parameter is the question you want to ask.
@@ -216,12 +231,15 @@ oink "Hello $name§!"
 - `nöf` - create variable
 - `oink` - print
 - `niff` - if statement
-- `nilf` - else if statement
-- `nör` - start for loop 
-- `når` - end   loop
+    - `nilf` - else if statement
+- `sow` - start for loop 
+    - `piglet` - end for loop
+- `snort` - start while loop
+    - `pork` - end while loop
+    - `pop` - break loop
 - `slingshot` - jump to line or function
 - `pig` - create function
-- `gip` - end function
+    - `gip` - end function
 - `input` - input
 
 ### Variable modifiers
@@ -299,10 +317,10 @@ nöff loop_example
 
 nöf num = 5
 
-nör oink 5
+sow oink 5
     sub $num 1
     oink "oinking $num times"
-når 
+piglet 
 
 ```
 ## Simple input Example
