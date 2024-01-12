@@ -32,7 +32,7 @@ oink"Hello World!"
 ```
 
 ## EVEN MORE IMPORTANT!!
-klinoff-lang is case sensitive, so you must write the code exactly like in this documentation.
+klinoff-lang is case  and SPACE sensitive, so you must write the code exactly like in this documentation. **DONT USE SPACES JUST HERE AND THERE, USE SPACES VERY CAREFULLY.**
 
 And also Happy to tell youu guys, that klinoff-lang is partnered with EcmaScript, so you HAVE TO leave a empty line at the end of the file.
 
@@ -41,7 +41,7 @@ The file extension for klinoff language is
 - `.kln`
 - `.nöff`
 
-and just in case for everybodys sanity, if you want some working color syntax highlighting, use `.sh` extension for some reason `.nöff` works but not as good.
+and just in case for everybodys sanity, if you want some working color syntax highlighting, use `.sh` extension for some reason `.nöff` works but not as good. INTRODUCING THE NEW VS CODE EXTENSION FOR KLINOFF-LANG, WITH THE EXTENSION YOU GET FULL CONTROL OF THE COLOR SYNTAX HIGHLIGHTING
 
 ## Features
 - Easy to learn
@@ -122,9 +122,13 @@ gip
 ```
 
 ### Slingshot (jump to line)
-You can jump to the line you want by using the `slingshot` keyword. It works like a angry bird, you slingshot to the pig 
+You can jump to the line you want by using the `slingshot` keyword. It works like a angry bird, you slingshot to the pig. You can jump to the line by providing only number
 ```bash
+//jump to pig
 slingshot possu
+
+// jumps to line
+slingshot 5
 ```
 
 ### If statements

@@ -51,7 +51,7 @@ def setup_functions(lines):
     for line in lines:
         line_number += 1
         if line.startswith("pig ") and len(line.split()) > 1:
-            function_name = line.split(" ", 1)[1]
+            function_name = line.split(" ")[1]
             functions[function_name] = [line_number, 0]
             last_function_name = function_name
         elif line.startswith("gip"):

@@ -36,12 +36,22 @@ def interpret(args):
     #  remove last \n
     no_indent_klinoff_content = no_indent_klinoff_content[:-1]
     
+    no_comment_klinoff_content = ""
+    for line in no_indent_klinoff_content.split("\n"):
+        if "//" in line:
+            no_comment_klinoff_content += line.split("//")[0] + "\n"
+        else:
+            no_comment_klinoff_content += line + "\n"
+    
+    print(no_comment_klinoff_content)
+    input()
+    
     for arg in args:
         if arg == "--debug" or arg == "-d":
             start.Debug_mode = True
             
     os.system("cls")
-    start.start(no_indent_klinoff_content)
+    start.start(no_comment_klinoff_content)
     
 if __name__ == "__main__":
     interpret(sys.argv[1::])

@@ -3,7 +3,7 @@ import start, error, if_statement
 
 def pig():
     try:
-        function_variable = start.full_line.split(" ", 1)[1]
+        function_variable = start.full_line.split(" ")[1]
     except:
         error.invalid_pig()
     start_line, end_line = start.functions[function_variable]

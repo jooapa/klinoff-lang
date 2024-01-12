@@ -1,7 +1,16 @@
-nöff complex_program
+nöff my_program
 
-nöf name = pig
+nöf num1 = 16
+nöf num2 = 2
 
-input $name "why is your name $name§? Change it to: "
+slingshot cubic_root_num1  
+ 
 
-oink "Hello $name§!"
+pig cubic_root_num1  
+
+    multiply $num1 $num2
+    power $num1 0.333
+
+    oink "$num1"
+
+gip

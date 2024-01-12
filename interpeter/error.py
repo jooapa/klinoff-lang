@@ -102,3 +102,8 @@ def no_quotes_in_input():
     print("Error: No quotes in input")
     line_error()
     exit()
+    
+def slingshot_goto_not_found(slingshot):
+    print("Error: Slingshot goto \"" + slingshot + "\" not found")
+    line_error()
+    exit()
