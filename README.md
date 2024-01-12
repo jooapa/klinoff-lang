@@ -58,9 +58,8 @@ And also Happy to tell youu guys, that klinoff-lang is partnered with EcmaScript
 ## file extension
 The file extension for klinoff language is
 - `.kln`
-- `.nöff`
 
-and just in case for everybodys sanity, if you want some working color syntax highlighting, use `.sh` extension for some reason `.nöff` works but not as good. INTRODUCING THE NEW VS CODE EXTENSION FOR KLINOFF-LANG, WITH THE EXTENSION YOU GET FULL CONTROL OF THE COLOR SYNTAX HIGHLIGHTING
+and just in case for everybodys sanity, if you want some working color syntax highlighting. INTRODUCING THE NEW VS CODE EXTENSION FOR KLINOFF-LANG, WITH THE EXTENSION YOU GET FULL CONTROL OF THE COLOR [SYNTAX HIGHLIGHTING](https://marketplace.visualstudio.com/items?itemName=Jooapa.klinoff-lang-syntax-highlighting)!
 
 ## Features
 - Easy to learn
@@ -333,6 +332,21 @@ nöf name = pig
 input $name "why is your name $name§? Change it to: "
 
 oink "Hello $name§!"
+
+```
+### Break for loop Example
+```bash
+nöff infi_loop_example
+
+nöf num = 1
+
+snort loop 500
+    add $num 1
+    oink "number is $num§"
+    nilf $num >= 100.0 : pop
+pork 
+
+oink "There is $num"
 
 ```
 
