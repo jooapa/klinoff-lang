@@ -114,7 +114,8 @@ Comments are used to explain the code. Comments are ignored by the compiler. Com
 ```c
 // This is a comment
 
-//this doesnt work
+oink "Hello World!" // This breaks everything, use in at your own risk
+
 ```
 
 ### Printing

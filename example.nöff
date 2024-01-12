@@ -1,16 +1,3 @@
 nöff my_program
 
-nöf num1 = 16
-nöf num2 = 2
-
-slingshot cubic_root_num1  
- 
-
-pig cubic_root_num1  
-
-    multiply $num1 $num2
-    power $num1 0.333
-
-    oink "$num1"
-
-gip
+oink "Hello World!"
