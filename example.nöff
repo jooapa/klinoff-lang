@@ -1,8 +1,15 @@
 nöff loop_example
 
-nöf num = 5
+snort oink infinite
+    oink "oinking infinite times"
+    pop
+pork
 
-sow oink 5
-    sub $num 1
-    oink "oinking $num times"
-piglet 
+nöf num = 1
+snort loop 500
+    add $num 1
+    oink "number is $num"
+    nilf $num > 100.0 : pop
+pork 
+
+oink "There is $num"

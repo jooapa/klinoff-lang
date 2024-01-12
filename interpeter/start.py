@@ -6,12 +6,13 @@ import error, oink, variable, if_statement, slingshot, pig, for_loop, input_func
 # niff    if statement
 # niffel  else statement
 # nilf    else if statement
-# sow     for loop
+# snort     for loop
 
 full_code = ""
-keywords = ["nöff", "nöf", "oink", "niff", "nilf", "sow", "modify",
+keywords = ["nöff", "nöf", "oink", "niff", "nilf", "snort", "modify",
             "add", "sub", "multiply", "divide", "modulo", "power", "//", 
-            "slingshot", "pig", "gip", "piglet", "nöffnöff", "input"]
+            "slingshot", "pig", "gip", "pork", "nöffnöff", "input",
+            "pop"]
 variables = {}
 functions = {
     # "function_name": [start_line, end_line]
@@ -61,21 +62,21 @@ def setup_functions(lines):
 
 def setup_for_loops(lines):
     # add every for loop to the for_loops dictionary with the line number
-    # for the start and end of the for loop, for loop starts with sow and ends with piglet
+    # for the start and end of the for loop, for loop starts with snort and ends with pork
     global for_loops
     line_number = 0
     last_for_loop_name = None
     for line in lines:
         line_number += 1
-        if line.startswith("sow ") and len(line.split()) > 1:
+        if line.startswith("snort ") and len(line.split()) > 1:
             for_loop_name = line.split(" ", 1)[1]
             for_loops[for_loop_name] = [line_number, 0]
             last_for_loop_name = for_loop_name
-        elif line.startswith("piglet"):
+        elif line.startswith("pork"):
             if last_for_loop_name is not None:
                 for_loops[last_for_loop_name][1] = line_number
                 last_for_loop_name = None
-                   
+
 def debugger():
     if Debug_mode:
         input()
@@ -99,9 +100,9 @@ def detect_keywords():
             if_statement.if_statement()
         elif first_word == "nilf":
             if_statement.if_statement()
-        elif first_word == "sow":
+        elif first_word == "snort":
             for_loop.start_loop()
-        elif first_word == "piglet":
+        elif first_word == "pork":
             for_loop.end_loop()
         elif first_word == "modify":
             variable.modify(full_line)
@@ -132,6 +133,8 @@ def detect_keywords():
             pass
         elif first_word == "input":
             input_func.input_func()
+        elif first_word == "pop":
+            for_loop.pop_loop()
     else:
         error.keyword_not_found(first_word)
         
