@@ -5,8 +5,22 @@
 ## Table of contents
 - [Introduction](#introduction)
 - [IMPORTANT!!](#important)
-- [EVEN MORE IMPORTANT!!](#even-more-important)
 - [Documentation](#documentation)
+- - [Starting](#starting)
+- - [Variables](#variables)
+- - [Comments](#comments)
+- - [Printing](#printing)
+- - [Creating a pig (function)](#creating-a-pig-function)
+- - [Slingshot (jump to line)](#slingshot-jump-to-line)
+- - [If statements](#if-statements)
+- - [For loops](#for-loops)
+- - [Input](#input)
+- - [Data types](#data-types)
+- - [Built-in secret functions](#built-in-secret-functions)
+- - [all keywords](#all-keywords)
+- - [Operators](#operators)
+- - [Keywords](#keywords)
+- - [Variable modifiers](#variable-modifiers)
 - [Using the interpreter](#using-the-interpreter)
 
 
@@ -20,7 +34,7 @@ klinoff-lang is a huge step in the evolution of programming languages. It is a l
 Klinoff-lang is a interpreted language, one known interpreter is found on this repository.
 
 ## IMPORTANT!!
-Your code must be coded with spaces with clear differene between words. the code must be written exactly like in this documentation.
+Your code must be coded with SPACES and is case sensitive with clear difference between words. The code must be written exactly like in this documentation. **DONT USE SPACES JUST HERE AND THERE, USE SPACES VERY CAREFULLY.**
 
 do this:
 ```bash
@@ -30,9 +44,6 @@ not this:
 ```bash
 oink"Hello World!"
 ```
-
-## EVEN MORE IMPORTANT!!
-klinoff-lang is case  and SPACE sensitive, so you must write the code exactly like in this documentation. **DONT USE SPACES JUST HERE AND THERE, USE SPACES VERY CAREFULLY.**
 
 And also Happy to tell youu guys, that klinoff-lang is partnered with EcmaScript, so you HAVE TO leave a empty line at the end of the file.
 
