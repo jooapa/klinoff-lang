@@ -20,9 +20,9 @@
     - [Data types](#data-types)
     - [Built-in secret functions](#built-in-secret-functions)
     - [all keywords](#all-keywords)
-    - [Operators](#operators)
-    - [Keywords](#keywords)
-    - [Variable modifiers](#variable-modifiers)
+        - [Operators](#operators)
+        - [Keywords](#keywords)
+        - [Variable modifiers](#variable-modifiers)
 - [Using the interpreter](#using-the-interpreter)
     - [Installation](#installation)
     - [Usage](#usage)
@@ -195,10 +195,10 @@ oink "Hello $name§!"
 ```
 
 
-### Data types
+## Data types
 - `string` - text
 
-### Built-in secret functions
+## Built-in secret functions
 - `nöffnöff` - return the program name __not working yet__
 
 ## all keywords
