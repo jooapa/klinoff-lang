@@ -1,6 +1,6 @@
 noff infi_loop_example
 
 nof num = homo 
-nof numn = 2
+nof num1 = 2
 
-oink "number is §$num and $numn"
+oink "number is $num $num $num1"

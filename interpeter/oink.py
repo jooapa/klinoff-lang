@@ -27,23 +27,19 @@ def say_quotes(text):
     words = text.split(" ")
     i = 0
     while i < len(words):
+        has_squigel = False
         word = words[i]
            
-        if word.startswith("$") and word.startswith("§"):
-            
+        if word.startswith("$") or word.startswith("§"):
             if word.startswith("§"):
-                word = word[1:]
-                print("word: " + word)
+                has_squigel = True
                 
             if "§" in word:
-                # remove § from variable name and insert the rest of the line in a new word
-                variable, rest_of_line = word.split("§", 1)
+                # if letter is § split the word at § and add the § letter to the start of the next word
+                variable = word.split("§")[0]
                 words[i] = variable
-                words.insert(i + 1, rest_of_line)
-                words[i + 1] = words[i + 1].replace("$", "")
-            
-            # print("word: " + word)
-            # input("Press enter to continue...")
+                words.insert(i+1, "§" + word.split("§")[1])
+                word = variable
             
             if vr.is_variable(word):
                 variable = vr.get_variable_value(word)
@@ -60,5 +56,7 @@ def say_quotes(text):
 
     # reconstruct the text with modified words
     text = " ".join(words)
+
+           
 
     return text

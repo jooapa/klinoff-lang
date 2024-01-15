@@ -29,6 +29,7 @@ nöff_count = 0 # make sure there is only one nöff
 coming_from_if = False
 last_came = []
 Debug_mode = False
+INVI_CHAR = "‎"
 
 def find_words_line(text, word):
     lines = text.split("\n")
