@@ -25,21 +25,28 @@ def say_quotes(text):
 
     # split text into words and check if they are variables
     words = text.split(" ")
+    converted_text = ""
     i = 0
     while i < len(words):
-        has_squigel = False
         word = words[i]
            
         if word.startswith("$") or word.startswith("§"):
             if word.startswith("§"):
-                has_squigel = True
+                word = word.replace("§", "")
+                print("www" + str(words))
+                input()
                 
+            print("w" + str(words))
+            input()
+            
             if "§" in word:
                 # if letter is § split the word at § and add the § letter to the start of the next word
                 variable = word.split("§")[0]
                 words[i] = variable
                 words.insert(i+1, "§" + word.split("§")[1])
                 word = variable
+                print("ww" + str(words))
+                input()
             
             if vr.is_variable(word):
                 variable = vr.get_variable_value(word)
@@ -47,16 +54,21 @@ def say_quotes(text):
                 error.variable_not_found(word)
 
             # replace word with variable
-            if i == len(words) - 1:
-                words[i] = variable
+            words[i] = variable
+                
+        # reconnect words if next word starts with § dont add a space
+        # if last
+        if i != len(words) - 1:
+            next_word = words[i+1]
+            
+        if next_word.startswith("§"):
+            converted_text += words[i]
+        else:
+            if i != len(words) - 1:
+                converted_text += words[i] + " "
             else:
-                words[i] = variable[:-1]
-
+                converted_text += words[i]            
         i += 1
+        
+    return converted_text
 
-    # reconstruct the text with modified words
-    text = " ".join(words)
-
-           
-
-    return text

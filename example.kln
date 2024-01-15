@@ -3,4 +3,4 @@ noff infi_loop_example
 nof num = homo 
 nof num1 = 2
 
-oink "number is $num $num $num1"
+oink "number is $num§$num§$num $num1"
