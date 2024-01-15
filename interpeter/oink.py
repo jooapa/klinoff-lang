@@ -23,6 +23,19 @@ def say_quotes(text):
     elif text.startswith("\"") and text.endswith("\""):
         text = text.replace("\"", "")
 
+def say_quotes(text):
+    # check if text is a variable
+    if text.startswith("$"):
+        text = text.replace("$", "")
+        if text in start.variables:
+            text = start.variables[text]
+        else:
+            error.variable_not_found(text)
+
+    # if text is a string, then remove the quotes
+    elif text.startswith("\"") and text.endswith("\""):
+        text = text.replace("\"", "")
+
     # split text into words and check if they are variables
     words = text.split(" ")
     converted_text = ""
@@ -45,12 +58,10 @@ def say_quotes(text):
                 words[i] = variable
                 words.insert(i+1, "§" + word.split("§")[1])
                 word = variable
-                print("ww" + str(words))
-                input()
             
-            if vr.is_variable(word):
+            if vr.is_variable(word) and not word.startswith("§"):
                 variable = vr.get_variable_value(word)
-            else:
+            elif not word.startswith("§"):
                 error.variable_not_found(word)
 
             # replace word with variable
@@ -71,4 +82,3 @@ def say_quotes(text):
         i += 1
         
     return converted_text
-
