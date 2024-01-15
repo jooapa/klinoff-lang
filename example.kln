@@ -1,11 +1,6 @@
 noff infi_loop_example
 
-nof num = 1
+nof num = homo 
+nof numn = 2
 
-snort loop infinite
-    add $num 1
-    oink "number is $num§"
-    nilf $num >= 100.0 : pop
-pork 
-
-oink "There is $num"
+oink "number is §$num and $numn"
