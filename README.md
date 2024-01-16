@@ -121,7 +121,6 @@ oink "Hello World!" // This breaks everything, use in at your own risk
 
 ### Printing
 Printing is used to print text to the console. Printing can be done by using the `oink` keyword.
-The future is here so that the oink function will always remove letter `§` from the output.
 
 ```bash
 oink "Hello World!"
@@ -130,8 +129,8 @@ oink "Hello World!"
 ```bash
 nöf money = -5000
 
-oink "I have $money§€ in my bank account"
-// Prints "I have -5000€ in my bank account" to the console
+oink "I have $money € in my bank account"
+// Prints "I have -5000 € in my bank account" to the console
 ```
 
 ### Creating a pig (function)

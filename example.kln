@@ -4,4 +4,4 @@ nof num1 = 1
 nof num2 = 2
 nöf num3 = 3
 
-oink "$num1 $num2 $num3§is 123"
+oink "$num1 $num2 $num3 is 123"
