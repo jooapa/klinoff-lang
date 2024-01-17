@@ -1,4 +1,7 @@
-nöff infi_loop_example
+nöff input_example
 
-nöf num1 = 5
-oink "$num1"
+nöf name = pig
+
+input $name "why is your name $name§? Change it to: "
+
+oink "Hello $name§!"

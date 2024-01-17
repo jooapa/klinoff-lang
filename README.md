@@ -356,7 +356,7 @@ nöf num = 1
 // infinite loop
 snort loop infinite
     add $num 1
-    oink "number is $num§"
+    oink "number is $num"
     nilf $num >= 100.0 : pop
 pork 
 
