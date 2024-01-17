@@ -97,16 +97,17 @@ you can also modify variables by using the `modify` keyword.
 nöf num1 = 5
 nöf num2 = 6
 modify $num1 $num2
-// num1 == 6
+# num1 == 6
 ```
-using `add`, `subtract`, `multiply`, `divide`, `modulo`, and `power`.
+using `add`, `sub`, `multiply`, `divide`, `modulo`, and `power`.
+First parameter is the variable you want to modify, and the second parameter is the value you want to modify the variable with.
 ```bash
-add $num1 5
-sub $num2 $num1
-multiply $num3 5
-divide $num4 0.5
-modulo $num5 5
-power $num6 $num1
+add      $num1  5
+sub      $num2  $num1
+multiply $num3  5
+divide   $num4  0.5
+modulo   $num5  5
+power    $num6  $num1
 ```
 
 ### Comments
@@ -124,19 +125,24 @@ Printing is used to print text to the console. Printing can be done by using the
 
 ```bash
 oink "Hello World!"
-// Prints "Hello World!" to the console
+# Prints "Hello World!" to the console
 ```
+```bash
+nöf num1 = 5
+oink "$num1"
+```
+The future is here so that the oink function will always remove letter `§` from the output.
 ```bash
 nöf money = -5000
 
-oink "I have $money € in my bank account"
-// Prints "I have -5000 € in my bank account" to the console
+oink "I have $money§€ in my bank account"
+# Prints "I have -5000§€ in my bank account" to the console
 ```
 ```bash
 nöf num1 = 5
 nöf num2 = 6
 oink "$num1$num2"
-// this does not work, you need to use spaces
+# this does not work, you need to use spaces
 ```
 
 ### Creating a pig (function)
@@ -150,10 +156,10 @@ gip
 ### Slingshot (jump to line)
 You can jump to the line you want by using the `slingshot` keyword. It works like a angry bird, you slingshot to the pig. You can jump to the line by providing only number
 ```bash
-//jump to pig
+#jump to pig
 slingshot possu
 
-// jumps to line
+# jumps to line
 slingshot 5
 ```
 
@@ -347,6 +353,7 @@ nöff infi_loop_example
 
 nöf num = 1
 
+// infinite loop
 snort loop infinite
     add $num 1
     oink "number is $num§"

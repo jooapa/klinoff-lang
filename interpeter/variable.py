@@ -32,7 +32,7 @@ def is_variable(variable):
 
 def is_number(number):
     try:
-        number = float(number)
+        float(number)
         return True
     except:
         return False
