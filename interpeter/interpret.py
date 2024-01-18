@@ -18,7 +18,7 @@ def get_contents(file_path):
 def interpret(args):
     # file extension
     file_extension = get_file_extension(args[0])
-    if file_extension == ".kln" or file_extension == ".klinoff" or file_extension == ".nöff" or file_extension == ".sh":
+    if file_extension == ".kln":
         pass   
     else:
         invalid_extension()
