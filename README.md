@@ -271,11 +271,11 @@ To install the interpreter, you need to have python3 installed. You can install 
 After installing python3, you need to install the interpreter. by cloning this repository.
 ## Usage
 ```bash
-python interpeter/interpret.py example.nöff
+python interpeter/interpret.py example.kln
 ```
 you can you the `--debug` or `-d` flag to see the debug information.
 ```bash
-python interpeter/interpret.py example.nöff -d
+python interpeter/interpret.py example.kln -d
 ```
 
 
