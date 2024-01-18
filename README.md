@@ -201,7 +201,7 @@ pork
 Use `pop` to break the loop.
 ```bash
 snort oink infinite
-    oink "oinking infinite times"
+    oink "oinking one time"
     pop
 pork
 
@@ -209,7 +209,7 @@ nöf num = 1
 snort loop infinite
     add $num 1
     oink "number is $num"
-    nilf $num > 100.0 : pop
+    nilf $num >= 100.0 : pop
 pork 
 
 oink "There is $num"
@@ -360,9 +360,14 @@ snort loop infinite
     nilf $num >= 100.0 : pop
 pork 
 
-oink "There is $num"
+oink "There is $num§1"
 
 ```
+
+## Technical details
+As the klinoff-lang has evolved so has the complexity of the codebase. The interpreter is written in python3 with reveals the true power of the language. no more cmake or makefiles, just python3, the language of the future.
+
+Using the power of (Count Code Lines VsCode Extension)[https://marketplace.visualstudio.com/items?itemName=miskamero.countcodelines], we can see that the interpreter has `805` lines of code.
 
 # Contributors
 ## Creator

@@ -73,7 +73,7 @@ def say_quotes(text):
                 error.variable_not_found(word)
 
             # replace word with variable
-            
+
             words[i] = variable
 
         # reconnect words if next word starts with § dont add a space
@@ -101,10 +101,10 @@ def say_quotes(text):
                 # print("3: " + str(converted_text))
                 # input()
         i += 1
-    
+
     # print("wwww: " + str(converted_text))
     # input()
-    
+
     # Final check for §
     if "§" in converted_text:
         converted_text = converted_text.replace("§", "")
