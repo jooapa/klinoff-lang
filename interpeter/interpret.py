@@ -49,8 +49,13 @@ def interpret(args):
     for arg in args:
         if arg == "--debug" or arg == "-d":
             start.Debug_mode = True
-            
-    os.system("cls")
+    
+    # Cross-platform SUpport for the one and only klinoff-lang
+    if os.name == "nt":
+        os.system("cls")
+    else:
+        os.system("clear")
+        
     start.start(no_comment_klinoff_content)
     
 if __name__ == "__main__":
